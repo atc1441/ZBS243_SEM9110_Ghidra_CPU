@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<processor_spec>
+
+  <programcounter register="PC"/>
+  
+  <volatile outputop="write_volatile" inputop="read_volatile">
+    <range space="SFR" first="0x0" last="0xFF"/>
+  </volatile>
+  
+  <default_symbols>
+  
+    <symbol name="R0" address="INTMEM:00"/>
+    <symbol name="R1" address="INTMEM:01"/>
+    <symbol name="R2" address="INTMEM:02"/>
+    <symbol name="R3" address="INTMEM:03"/>
+    <symbol name="R4" address="INTMEM:04"/>
+    <symbol name="R5" address="INTMEM:05"/>
+    <symbol name="R6" address="INTMEM:06"/>
+    <symbol name="R7" address="INTMEM:07"/>
+  
+	<!-- ####################################################### -->
+    <symbol name="P0" address="SFR:80"/>
+    <symbol name="SP" address="SFR:81"/>
+	<symbol name="DPL" address="SFR:82"/>
+	<symbol name="DPH" address="SFR:83"/>
+	<symbol name="DPL1" address="SFR:84"/>
+	<symbol name="DPH1" address="SFR:85"/>
+	
+    <symbol name="TCON" address="SFR:88"/>
+    <symbol name="TMOD" address="SFR:89"/>
+    <symbol name="TL0" address="SFR:8a"/>
+    <symbol name="TL1" address="SFR:8b"/>
+    <symbol name="TH0" address="SFR:8c"/>
+    <symbol name="TH1" address="SFR:8d"/>
+    <symbol name="CLKSPEED" address="SFR:8e"/>
+    <symbol name="RESET" address="SFR:8f"/>
+	
+	<!-- ####################################################### -->
+    <symbol name="P1" address="SFR:90"/>
+    <symbol name="I2CSTATE" address="SFR:91"/>
+    <symbol name="I2CBUF" address="SFR:94"/>
+    <symbol name="I2CCTL" address="SFR:95"/>
+    <symbol name="I2CSPEED" address="SFR:96"/>
+	
+    <symbol name="UARTSTA" address="SFR:98"/>
+    <symbol name="UARTBUF" address="SFR:99"/>
+    <symbol name="UARTBRGL" address="SFR:9a"/>
+    <symbol name="UARTBRGH" address="SFR:9b"/>
+    
+	<!-- ####################################################### -->
+    <symbol name="P2_XPAGE" address="SFR:a0"/>
+    <symbol name="ANALOGEN" address="SFR:a1"/>
+    <symbol name="I2CUNKNOWN" address="SFR:a2"/>
+
+    <symbol name="P0LVLSEL" address="SFR:a3"/>
+    <symbol name="P1LVLSEL" address="SFR:a4"/>
+    <symbol name="P2LVLSEL" address="SFR:a5"/>
+
+    <symbol name="P0INTEN" address="SFR:a6"/>	
+    <symbol name="P1INTEN" address="SFR:a7"/>
+    <symbol name="IEN0__IEN_UART0" address="SFR:a8"/>	
+    <symbol name="P2INTEN__IEN_TMR0" address="SFR:a9"/>	
+
+    <symbol name="P0CHSTA" address="SFR:aa"/>
+    <symbol name="P1CHSTA__IEN_TMR1" address="SFR:ab"/>
+    <symbol name="P2CHSTA__IEN_RF1" address="SFR:ac"/>
+
+    <symbol name="P0FUNC__IEN_RF2" address="SFR:ad"/>
+    <symbol name="P1FUNC" address="SFR:ae"/>
+    <symbol name="P2FUNC__IEN_EA" address="SFR:af"/>
+	<!-- ####################################################### -->
+	
+    <symbol name="PERFMON0" address="SFR:b2"/>
+    <symbol name="PERFMON1" address="SFR:b3"/>
+    <symbol name="PCH" address="SFR:b4"/>
+    <symbol name="PCL" address="SFR:b5"/>
+    <symbol name="PERFMON4" address="SFR:b6"/>
+	
+    <symbol name="CLKEN" address="SFR:b7"/>
+
+    <symbol name="P0DIR" address="SFR:b9"/>
+    <symbol name="P1DIR_WDTENA" address="SFR:ba"/>
+    <symbol name="P2DIR_WDTPET" address="SFR:bb"/>
+    <symbol name="P0PULL_WDTRSTVALL" address="SFR:bc"/>
+    <symbol name="P1PULL_WDTRSTVALM" address="SFR:bd"/>
+    <symbol name="P2PULL_WDTRSTVALH" address="SFR:be"/>
+    <symbol name="WDTCONF" address="SFR:bf"/>
+	
+	<!-- ####################################################### -->
+    <symbol name="UNK_C1" address="SFR:c1"/>
+	
+    <symbol name="SETTINGS" address="SFR:c7"/>	
+	
+    <symbol name="RADIO_TXPTRL" address="SFR:c9"/>
+    <symbol name="RADIO_TXPTRH" address="SFR:ca"/>
+    <symbol name="RADIO_INITSEQ1" address="SFR:cb"/>
+    <symbol name="RADIO_INITSEQ2" address="SFR:cc"/>
+    <symbol name="RADIO_TXLEN" address="SFR:cd"/>
+    <symbol name="RADIO_INITSEQ0" address="SFR:ce"/>
+    <symbol name="TCON2" address="SFR:cf"/>	
+	<!-- ####################################################### -->
+    <symbol name="PSW" address="SFR:d0"/>
+    <symbol name="RADIO_INITSEQ4" address="SFR:d1"/>
+    <symbol name="RADIO_INITSEQ5" address="SFR:d2"/>
+    <symbol name="RADIO_RXPTRL" address="SFR:d3"/>
+    <symbol name="RADIO_RXPTRH" address="SFR:d4"/>
+    <symbol name="RADIO_RXLEN" address="SFR:d5"/>
+    <symbol name="RADIO_INITSEQ3" address="SFR:d6"/>
+    <symbol name="TRIGGER" address="SFR:d7"/>
+								 
+    <symbol name="FPGNO" address="SFR:d8"/>
+    <symbol name="FWSRCL" address="SFR:d9"/>
+    <symbol name="FWSRCH" address="SFR:da"/>
+    <symbol name="FWRDSTL" address="SFR:db"/>
+    <symbol name="FWRDSTH" address="SFR:dc"/>
+    <symbol name="FWRLENL" address="SFR:dd"/>
+    <symbol name="FWRLENH" address="SFR:de"/>
+    <symbol name="FWRTHREE" address="SFR:df"/>	
+	<!-- ####################################################### -->
+    <symbol name="ACC" address="SFR:e0"/>
+    <symbol name="TEMPCAL1" address="SFR:e6"/>
+    <symbol name="TEMPCAL2" address="SFR:e7"/>
+								 
+    <symbol name="SPIUNKNOWN" address="SFR:eb"/>
+    <symbol name="SPICFG" address="SFR:ec"/>
+    <symbol name="SPIENA" address="SFR:ed"/>
+    <symbol name="SPITX" address="SFR:ee"/>
+    <symbol name="SPIRX" address="SFR:ef"/>	
+	<!-- ####################################################### -->
+    <symbol name="B" address="SFR:f0"/>
+    <symbol name="TEMPCFG" address="SFR:f7"/>								 
+    <symbol name="TEMPRETH" address="SFR:f8"/>
+    <symbol name="TEMPRETL" address="SFR:f9"/>
+
+    <symbol name="RADIO_GOTLEN" address="SFR:fa"/>
+
+    <symbol name="TEMPCAL3" address="SFR:fb"/>
+    <symbol name="TEMPCAL4" address="SFR:fc"/>
+    <symbol name="TEMPCAL5" address="SFR:fd"/>
+    <symbol name="TEMPCAL6" address="SFR:fe"/>
+
+    <symbol name="CFGPAGE" address="SFR:ff"/>	
+	<!-- ####################################################### -->
+    
+    <symbol name="20.0" address="BITS:00"/>
+    <symbol name="20.1" address="BITS:01"/>
+    <symbol name="20.2" address="BITS:02"/>
+    <symbol name="20.3" address="BITS:03"/>
+    <symbol name="20.4" address="BITS:04"/>
+    <symbol name="20.5" address="BITS:05"/>
+    <symbol name="20.6" address="BITS:06"/>
+    <symbol name="20.7" address="BITS:07"/>
+    <symbol name="21.0" address="BITS:08"/>
+    <symbol name="21.1" address="BITS:09"/>
+    <symbol name="21.2" address="BITS:0a"/>
+    <symbol name="21.3" address="BITS:0b"/>
+    <symbol name="21.4" address="BITS:0c"/>
+    <symbol name="21.5" address="BITS:0d"/>
+    <symbol name="21.6" address="BITS:0e"/>
+    <symbol name="21.7" address="BITS:0f"/>
+    <symbol name="22.0" address="BITS:10"/>
+    <symbol name="22.1" address="BITS:11"/>
+    <symbol name="22.2" address="BITS:12"/>
+    <symbol name="22.3" address="BITS:13"/>
+    <symbol name="22.4" address="BITS:14"/>
+    <symbol name="22.5" address="BITS:15"/>
+    <symbol name="22.6" address="BITS:16"/>
+    <symbol name="22.7" address="BITS:17"/>
+    <symbol name="23.0" address="BITS:18"/>
+    <symbol name="23.1" address="BITS:19"/>
+    <symbol name="23.2" address="BITS:1a"/>
+    <symbol name="23.3" address="BITS:1b"/>
+    <symbol name="23.4" address="BITS:1c"/>
+    <symbol name="23.5" address="BITS:1d"/>
+    <symbol name="23.6" address="BITS:1e"/>
+    <symbol name="23.7" address="BITS:1f"/>
+    <symbol name="24.0" address="BITS:20"/>
+    <symbol name="24.1" address="BITS:21"/>
+    <symbol name="24.2" address="BITS:22"/>
+    <symbol name="24.3" address="BITS:23"/>
+    <symbol name="24.4" address="BITS:24"/>
+    <symbol name="24.5" address="BITS:25"/>
+    <symbol name="24.6" address="BITS:26"/>
+    <symbol name="24.7" address="BITS:27"/>
+    <symbol name="25.0" address="BITS:28"/>
+    <symbol name="25.1" address="BITS:29"/>
+    <symbol name="25.2" address="BITS:2a"/>
+    <symbol name="25.3" address="BITS:2b"/>
+    <symbol name="25.4" address="BITS:2c"/>
+    <symbol name="25.5" address="BITS:2d"/>
+    <symbol name="25.6" address="BITS:2e"/>
+    <symbol name="25.7" address="BITS:2f"/>
+    <symbol name="26.0" address="BITS:30"/>
+    <symbol name="26.1" address="BITS:31"/>
+    <symbol name="26.2" address="BITS:32"/>
+    <symbol name="26.3" address="BITS:33"/>
+    <symbol name="26.4" address="BITS:34"/>
+    <symbol name="26.5" address="BITS:35"/>
+    <symbol name="26.6" address="BITS:36"/>
+    <symbol name="26.7" address="BITS:37"/>
+    <symbol name="27.0" address="BITS:38"/>
+    <symbol name="27.1" address="BITS:39"/>
+    <symbol name="27.2" address="BITS:3a"/>
+    <symbol name="27.3" address="BITS:3b"/>
+    <symbol name="27.4" address="BITS:3c"/>
+    <symbol name="27.5" address="BITS:3d"/>
+    <symbol name="27.6" address="BITS:3e"/>
+    <symbol name="27.7" address="BITS:3f"/>
+    <symbol name="28.0" address="BITS:40"/>
+    <symbol name="28.1" address="BITS:41"/>
+    <symbol name="28.2" address="BITS:42"/>
+    <symbol name="28.3" address="BITS:43"/>
+    <symbol name="28.4" address="BITS:44"/>
+    <symbol name="28.5" address="BITS:45"/>
+    <symbol name="28.6" address="BITS:46"/>
+    <symbol name="28.7" address="BITS:47"/>
+    <symbol name="29.0" address="BITS:48"/>
+    <symbol name="29.1" address="BITS:49"/>
+    <symbol name="29.2" address="BITS:4a"/>
+    <symbol name="29.3" address="BITS:4b"/>
+    <symbol name="29.4" address="BITS:4c"/>
+    <symbol name="29.5" address="BITS:4d"/>
+    <symbol name="29.6" address="BITS:4e"/>
+    <symbol name="29.7" address="BITS:4f"/>
+    <symbol name="2a.0" address="BITS:50"/>
+    <symbol name="2a.1" address="BITS:51"/>
+    <symbol name="2a.2" address="BITS:52"/>
+    <symbol name="2a.3" address="BITS:53"/>
+    <symbol name="2a.4" address="BITS:54"/>
+    <symbol name="2a.5" address="BITS:55"/>
+    <symbol name="2a.6" address="BITS:56"/>
+    <symbol name="2a.7" address="BITS:57"/>
+    <symbol name="2b.0" address="BITS:58"/>
+    <symbol name="2b.1" address="BITS:59"/>
+    <symbol name="2b.2" address="BITS:5a"/>
+    <symbol name="2b.3" address="BITS:5b"/>
+    <symbol name="2b.4" address="BITS:5c"/>
+    <symbol name="2b.5" address="BITS:5d"/>
+    <symbol name="2b.6" address="BITS:5e"/>
+    <symbol name="2b.7" address="BITS:5f"/>
+    <symbol name="2c.0" address="BITS:60"/>
+    <symbol name="2c.1" address="BITS:61"/>
+    <symbol name="2c.2" address="BITS:62"/>
+    <symbol name="2c.3" address="BITS:63"/>
+    <symbol name="2c.4" address="BITS:64"/>
+    <symbol name="2c.5" address="BITS:65"/>
+    <symbol name="2c.6" address="BITS:66"/>
+    <symbol name="2c.7" address="BITS:67"/>
+    <symbol name="2d.0" address="BITS:68"/>
+    <symbol name="2d.1" address="BITS:69"/>
+    <symbol name="2d.2" address="BITS:6a"/>
+    <symbol name="2d.3" address="BITS:6b"/>
+    <symbol name="2d.4" address="BITS:6c"/>
+    <symbol name="2d.5" address="BITS:6d"/>
+    <symbol name="2d.6" address="BITS:6e"/>
+    <symbol name="2d.7" address="BITS:6f"/>
+    <symbol name="2e.0" address="BITS:70"/>
+    <symbol name="2e.1" address="BITS:71"/>
+    <symbol name="2e.2" address="BITS:72"/>
+    <symbol name="2e.3" address="BITS:73"/>
+    <symbol name="2e.4" address="BITS:74"/>
+    <symbol name="2e.5" address="BITS:75"/>
+    <symbol name="2e.6" address="BITS:76"/>
+    <symbol name="2e.7" address="BITS:77"/>
+    <symbol name="2f.0" address="BITS:78"/>
+    <symbol name="2f.1" address="BITS:79"/>
+    <symbol name="2f.2" address="BITS:7a"/>
+    <symbol name="2f.3" address="BITS:7b"/>
+    <symbol name="2f.4" address="BITS:7c"/>
+    <symbol name="2f.5" address="BITS:7d"/>
+    <symbol name="2f.6" address="BITS:7e"/>
+    <symbol name="2f.7" address="BITS:7f"/>
+    
+    <symbol name="P0.0" address="BITS:80"/>
+    <symbol name="P0.1" address="BITS:81"/>
+    <symbol name="P0.2" address="BITS:82"/>
+    <symbol name="P0.3" address="BITS:83"/>
+    <symbol name="P0.4" address="BITS:84"/>
+    <symbol name="P0.5" address="BITS:85"/>
+    <symbol name="P0.6" address="BITS:86"/>
+    <symbol name="P0.7" address="BITS:87"/>
+    <symbol name="IT0" address="BITS:88"/>
+    <symbol name="IE0" address="BITS:89"/>
+    <symbol name="IT1" address="BITS:8a"/>
+    <symbol name="IE1" address="BITS:8b"/>
+    <symbol name="TR0" address="BITS:8c"/>
+    <symbol name="TF0" address="BITS:8d"/>
+    <symbol name="TR1" address="BITS:8e"/>
+    <symbol name="TF1" address="BITS:8f"/>
+    <symbol name="P1.0" address="BITS:90"/>
+    <symbol name="P1.1" address="BITS:91"/>
+    <symbol name="P1.2" address="BITS:92"/>
+    <symbol name="P1.3" address="BITS:93"/>
+    <symbol name="P1.4" address="BITS:94"/>
+    <symbol name="P1.5" address="BITS:95"/>
+    <symbol name="P1.6" address="BITS:96"/>
+    <symbol name="P1.7" address="BITS:97"/>
+    <symbol name="UART_RXF" address="BITS:98"/>
+    <symbol name="UART_TXE" address="BITS:99"/>
+    <symbol name="RB8" address="BITS:9a"/>
+    <symbol name="TB8" address="BITS:9b"/>
+    <symbol name="REN" address="BITS:9c"/>
+    <symbol name="SM2" address="BITS:9d"/>
+    <symbol name="SM1" address="BITS:9e"/>
+    <symbol name="SM0" address="BITS:9f"/>
+    <symbol name="P2.0" address="BITS:a0"/>
+    <symbol name="P2.1" address="BITS:a1"/>
+    <symbol name="P2.2" address="BITS:a2"/>
+    <symbol name="P2.3" address="BITS:a3"/>
+    <symbol name="P2.4" address="BITS:a4"/>
+    <symbol name="P2.5" address="BITS:a5"/>
+    <symbol name="P2.6" address="BITS:a6"/>
+    <symbol name="P2.7" address="BITS:a7"/>
+    <symbol name="EX0" address="BITS:a8"/>
+    <symbol name="ET0" address="BITS:a9"/>
+    <symbol name="EX1" address="BITS:aa"/>
+    <symbol name="ET1" address="BITS:ab"/>
+    <symbol name="ES" address="BITS:ac"/>
+    <symbol name="ET2" address="BITS:ad"/>
+    <symbol name="EC" address="BITS:ae"/>
+    <symbol name="EA" address="BITS:af"/>
+    <symbol name="RXD" address="BITS:b0"/>
+    <symbol name="TXD" address="BITS:b1"/>
+    <symbol name="INT0" address="BITS:b2"/>
+    <symbol name="INT1" address="BITS:b3"/>
+    <symbol name="T0" address="BITS:b4"/>
+    <symbol name="T1" address="BITS:b5"/>
+    <symbol name="WR" address="BITS:b6"/>
+    <symbol name="RD" address="BITS:b7"/>
+    <symbol name="PX0" address="BITS:b8"/>
+    <symbol name="PT0" address="BITS:b9"/>
+    <symbol name="PX1" address="BITS:ba"/>
+    <symbol name="PT1" address="BITS:bb"/>
+    <symbol name="PS" address="BITS:bc"/>
+    <symbol name="PT2" address="BITS:bd"/>
+    <symbol name="PC" address="BITS:be"/>
+    <symbol name="IP.7" address="BITS:bf"/>
+    <symbol name="FIFLG.0" address="BITS:c0"/>
+    <symbol name="FIFLG.1" address="BITS:c1"/>
+    <symbol name="FIFLG.2" address="BITS:c2"/>
+    <symbol name="FIFLG.3" address="BITS:c3"/>
+    <symbol name="FIFLG.4" address="BITS:c4"/>
+    <symbol name="FIFLG.5" address="BITS:c5"/>
+    <symbol name="FIFLG.6" address="BITS:c6"/>
+    <symbol name="FIFLG.7" address="BITS:c7"/>
+    <symbol name="CPRL2" address="BITS:c8"/>
+    <symbol name="CT2" address="BITS:c9"/>
+    <symbol name="TR2" address="BITS:ca"/>
+    <symbol name="EXEN2" address="BITS:cb"/>
+    <symbol name="TCLK" address="BITS:cc"/>
+    <symbol name="RCLK" address="BITS:cd"/>
+    <symbol name="EXF2" address="BITS:ce"/>
+    <symbol name="TF2" address="BITS:cf"/>
+    <symbol name="P" address="BITS:d0"/>
+    <symbol name="UD" address="BITS:d1"/>
+    <symbol name="OV" address="BITS:d2"/>
+    <symbol name="RS0" address="BITS:d3"/>
+    <symbol name="RS1" address="BITS:d4"/>
+    <symbol name="F0" address="BITS:d5"/>
+    <symbol name="AC" address="BITS:d6"/>
+    <symbol name="C" address="BITS:d7"/>
+    <symbol name="CCF.0" address="BITS:d8"/>
+    <symbol name="CCF.1" address="BITS:d9"/>
+    <symbol name="CCF.2" address="BITS:da"/>
+    <symbol name="CCF.3" address="BITS:db"/>
+    <symbol name="CCF.4" address="BITS:dc"/>
+    <symbol name="CCON.5" address="BITS:dd"/>
+    <symbol name="CR" address="BITS:de"/>
+    <symbol name="CF" address="BITS:df"/>
+    <symbol name="ACC.0" address="BITS:e0"/>
+    <symbol name="ACC.1" address="BITS:e1"/>
+    <symbol name="ACC.2" address="BITS:e2"/>
+    <symbol name="ACC.3" address="BITS:e3"/>
+    <symbol name="ACC.4" address="BITS:e4"/>
+    <symbol name="ACC.5" address="BITS:e5"/>
+    <symbol name="ACC.6" address="BITS:e6"/>
+    <symbol name="ACC.7" address="BITS:e7"/>
+    <symbol name="HIFLG.0" address="BITS:e8"/>
+    <symbol name="HIFLG.1" address="BITS:e9"/>
+    <symbol name="HIFLG.2" address="BITS:ea"/>
+    <symbol name="HIFLG.3" address="BITS:eb"/>
+    <symbol name="HIFLG.4" address="BITS:ec"/>
+    <symbol name="HIFLG.5" address="BITS:ed"/>
+    <symbol name="HIFLG.6" address="BITS:ee"/>
+    <symbol name="HIFLG.7" address="BITS:ef"/>
+    <symbol name="B.0" address="BITS:f0"/>
+    <symbol name="B.1" address="BITS:f1"/>
+    <symbol name="B.2" address="BITS:f2"/>
+    <symbol name="B.3" address="BITS:f3"/>
+    <symbol name="B.4" address="BITS:f4"/>
+    <symbol name="B.5" address="BITS:f5"/>
+    <symbol name="B.6" address="BITS:f6"/>
+    <symbol name="B.7" address="BITS:f7"/>
+    <symbol name="F8.0" address="BITS:f8"/>
+    <symbol name="F8.1" address="BITS:f9"/>
+    <symbol name="F8.2" address="BITS:fa"/>
+    <symbol name="F8.3" address="BITS:fb"/>
+    <symbol name="F8.4" address="BITS:fc"/>
+    <symbol name="F8.5" address="BITS:fd"/>
+    <symbol name="F8.6" address="BITS:fe"/>
+    <symbol name="F8.7" address="BITS:ff"/>
+    
+	<!-- RADIO  ####################################################### -->
+    <symbol name="RADIO_Command" address="EXTMEM:df48"/>
+    <symbol name="RADIO_Cal_70" address="EXTMEM:df70"/>
+    <symbol name="RADIO_Cal_71" address="EXTMEM:df71"/>
+    <symbol name="RADIO_FLAGS" address="EXTMEM:df80"/>
+    <symbol name="RADIO_Cal_81" address="EXTMEM:df81"/>
+    <symbol name="RADIO_unk_83" address="EXTMEM:df83"/>
+    <symbol name="RADIO_CurrentRSSI" address="EXTMEM:df84"/>
+    <symbol name="RADIO_Cal_86" address="EXTMEM:df86"/>
+    <symbol name="RADIO_ownMac_7" address="EXTMEM:df88"/>
+    <symbol name="RADIO_ownMac_6" address="EXTMEM:df89"/>
+    <symbol name="RADIO_ownMac_5" address="EXTMEM:df8a"/>
+    <symbol name="RADIO_ownMac_4" address="EXTMEM:df8b"/>
+    <symbol name="RADIO_ownMac_3" address="EXTMEM:df8c"/>
+    <symbol name="RADIO_ownMac_2" address="EXTMEM:df8d"/>
+    <symbol name="RADIO_ownMac_1" address="EXTMEM:df8e"/>
+    <symbol name="RADIO_ownMac_0" address="EXTMEM:df8f"/>
+    <symbol name="RADIO_PANID_Hi" address="EXTMEM:df90"/>
+    <symbol name="RADIO_PANID_Lo" address="EXTMEM:df91"/>
+    <symbol name="RADIO_OwnShortAddr_Hi" address="EXTMEM:df92"/>
+    <symbol name="RADIO_OwnShortAddr_Lo" address="EXTMEM:df93"/>
+    <symbol name="RADIO_Cal_94" address="EXTMEM:df94"/>
+    <symbol name="RADIO_Cal_95" address="EXTMEM:df95"/>
+    <symbol name="RADIO_Cal_96" address="EXTMEM:df96"/>
+    <symbol name="RADIO_rxFirstByte" address="EXTMEM:df98"/>
+    <symbol name="RADIO_curRfState" address="EXTMEM:df9b"/>
+    <symbol name="RADIO_Cal_9d" address="EXTMEM:df9d"/>
+    <symbol name="RADIO_Cal_a1" address="EXTMEM:dfa1"/>
+    <symbol name="RADIO_unk_rxAckSta" address="EXTMEM:dfa5"/>
+    <symbol name="RADIO_unk_a6" address="EXTMEM:dfa6"/>
+    <symbol name="RADIO_IRQ4_pending" address="EXTMEM:dfad"/>
+    <symbol name="RADIO_unk_af" address="EXTMEM:dfaf"/>
+    <symbol name="RADIO_channel" address="EXTMEM:dfc0"/>
+    <symbol name="RADIO_unk_c1" address="EXTMEM:dfc1"/>
+    <symbol name="RADIO_Cal_c2" address="EXTMEM:dfc2"/>
+    <symbol name="RADIO_Cal_c3" address="EXTMEM:dfc3"/>
+    <symbol name="RADIO_Cal_c4" address="EXTMEM:dfc4"/>
+    <symbol name="RADIO_Cal_c5" address="EXTMEM:dfc5"/>
+    <symbol name="RADIO_Cal_c6" address="EXTMEM:dfc6"/>
+    <symbol name="RADIO_Cal_c7" address="EXTMEM:dfc7"/>
+    <symbol name="RADIO_unk_c8" address="EXTMEM:dfc8"/>
+    <symbol name="RADIO_txPower" address="EXTMEM:dfc9"/>
+    <symbol name="RADIO_unk_ca" address="EXTMEM:dfca"/>
+    <symbol name="RADIO_unk_perChannelSetting2" address="EXTMEM:dfcb"/>
+    <symbol name="RADIO_unk_cd" address="EXTMEM:dfcd"/>
+    <symbol name="RADIO_unk_ce" address="EXTMEM:dfce"/>
+    <symbol name="RADIO_Cal_cf" address="EXTMEM:dfcf"/>
+    <symbol name="RADIO_Cal_d0" address="EXTMEM:dfd0"/>
+    <symbol name="RADIO_Cal_d1" address="EXTMEM:dfd1"/>
+    <symbol name="RADIO_Cal_d2" address="EXTMEM:dfd2"/>
+    <symbol name="RADIO_Cal_d3" address="EXTMEM:dfd3"/>
+    <symbol name="RADIO_Cal_d4" address="EXTMEM:dfd4"/>
+    <symbol name="RADIO_Cal_d5" address="EXTMEM:dfd5"/>
+    <symbol name="RADIO_unk_d7" address="EXTMEM:dfd7"/>
+    <symbol name="RADIO_unk_d8" address="EXTMEM:dfd8"/>
+    <symbol name="RADIO_SleepTimerHi" address="EXTMEM:dfd9"/>
+    <symbol name="RADIO_SleepTimerMid" address="EXTMEM:dfda"/>
+    <symbol name="RADIO_SleepTimerLo" address="EXTMEM:dfdb"/>
+    <symbol name="RADIO_unk_e2" address="EXTMEM:dfe2"/>
+    <symbol name="RADIO_unk_f0" address="EXTMEM:dff0"/>
+    <symbol name="RADIO_SleepTimerSettings" address="EXTMEM:dff3"/>
+    <symbol name="RADIO_RadioPowerCtl" address="EXTMEM:dff4"/>
+    <symbol name="RADIO_perChannelSetting1" address="EXTMEM:dffd"/>
+	
+	<!-- RADIO  END ################################################### -->
+
+    <symbol name="Timer_T0" address="EXTMEM:8C8A"/>
+    <symbol name="Timer_T1" address="EXTMEM:8D8B"/>
+
+  </default_symbols>
+  
+  <default_memory_blocks>
+    <memory_block name="REG_BANK_1" start_address="INTMEM:0" length="0x8" initialized="false"/>
+    <memory_block name="REG_BANK_2" start_address="INTMEM:8" length="0x8" initialized="false"/>
+    <memory_block name="REG_BANK_3" start_address="INTMEM:10" length="0x8" initialized="false"/>
+    <memory_block name="REG_BANK_4" start_address="INTMEM:18" length="0x8" initialized="false"/>
+    <memory_block name="INTMEM" start_address="INTMEM:20" length="0xe0" initialized="false"/>
+    <memory_block name="BITS" start_address="BITS:00" bit_mapped_address="INTMEM:20" length="0x80"/>
+    <memory_block name="SFR" start_address="SFR:80" length="0x80" initialized="false"/>
+    <memory_block name="RADIO" start_address="EXTMEM:df48" length="0xb6" initialized="false"/>
+	<memory_block name="T0_Storage" start_address="EXTMEM:8C8A" length="0x2" initialized="false"/>
+	<memory_block name="T1_Storage" start_address="EXTMEM:8D8B" length="0x2" initialized="false"/>
+	
+    <memory_block name="Ext_RAM" start_address="EXTMEM:e000" length="0x2000" initialized="false"/>
+    
+    <!--  BUG: SFR-BITS do not map properly since only every 8th SFR register is mapped (e.g., 0x80, 0x88, 0x90 ... 0xF0, 0xF8) -->
+    <memory_block name="SFR-BITS" start_address="BITS:80" bit_mapped_address="SFR:80" length="0x80"/>
+    
+  </default_memory_blocks>
+  
+</processor_spec>
