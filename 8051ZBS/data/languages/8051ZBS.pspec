@@ -59,16 +59,16 @@
 
     <symbol name="P0INTEN" address="SFR:a6"/>	
     <symbol name="P1INTEN" address="SFR:a7"/>
-    <symbol name="IEN0__IEN_UART0" address="SFR:a8"/>	
-    <symbol name="P2INTEN__IEN_TMR0" address="SFR:a9"/>	
+    <symbol name="IEN0" address="SFR:a8"/>	
+    <symbol name="P2INTEN" address="SFR:a9"/>	
 
     <symbol name="P0CHSTA" address="SFR:aa"/>
-    <symbol name="P1CHSTA__IEN_TMR1" address="SFR:ab"/>
-    <symbol name="P2CHSTA__IEN_RF1" address="SFR:ac"/>
+    <symbol name="P1CHSTA" address="SFR:ab"/>
+    <symbol name="P2CHSTA" address="SFR:ac"/>
 
-    <symbol name="P0FUNC__IEN_RF2" address="SFR:ad"/>
+    <symbol name="P0FUNC" address="SFR:ad"/>
     <symbol name="P1FUNC" address="SFR:ae"/>
-    <symbol name="P2FUNC__IEN_EA" address="SFR:af"/>
+    <symbol name="P2FUNC" address="SFR:af"/>
 	<!-- ####################################################### -->
 	
     <symbol name="PERFMON0" address="SFR:b2"/>
@@ -312,14 +312,14 @@
     <symbol name="P2.5" address="BITS:a5"/>
     <symbol name="P2.6" address="BITS:a6"/>
     <symbol name="P2.7" address="BITS:a7"/>
-    <symbol name="EX0" address="BITS:a8"/>
-    <symbol name="ET0" address="BITS:a9"/>
+    <symbol name="IEN_UART0" address="BITS:a8"/>
+    <symbol name="IEN_TMR0" address="BITS:a9"/>
     <symbol name="EX1" address="BITS:aa"/>
-    <symbol name="ET1" address="BITS:ab"/>
-    <symbol name="ES" address="BITS:ac"/>
-    <symbol name="ET2" address="BITS:ad"/>
+    <symbol name="IEN_TMR1" address="BITS:ab"/>
+    <symbol name="IEN_RF1" address="BITS:ac"/>
+    <symbol name="IEN_RF2" address="BITS:ad"/>
     <symbol name="EC" address="BITS:ae"/>
-    <symbol name="EA" address="BITS:af"/>
+    <symbol name="IEN_EA" address="BITS:af"/>
     <symbol name="RXD" address="BITS:b0"/>
     <symbol name="TXD" address="BITS:b1"/>
     <symbol name="INT0" address="BITS:b2"/>
